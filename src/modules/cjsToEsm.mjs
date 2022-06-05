@@ -2,6 +2,9 @@ import path from "path";
 import url from "url";
 import { release, version } from "os";
 import { createServer as createServerHttp } from "http";
+
+import a from "./files/a.json" assert { type: "json" };
+import b from "./files/a.json" assert { type: "json" };
 import "./files/c.js";
 
 const __filename = url.fileURLToPath(import.meta.url);
@@ -12,9 +15,9 @@ const random = Math.random();
 export let unknownObject;
 
 if (random > 0.5) {
-  unknownObject = import("./files/a.json");
+  unknownObject = a;
 } else {
-  unknownObject = import("./files/b.json");
+  unknownObject = b;
 }
 
 console.log(`Release ${release()}`);
