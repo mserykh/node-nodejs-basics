@@ -12,13 +12,7 @@ const __dirname = path.dirname(__filename);
 
 const random = Math.random();
 
-export let unknownObject;
-
-if (random > 0.5) {
-  unknownObject = a;
-} else {
-  unknownObject = b;
-}
+export let unknownObject = random > 0.5 ? a : b;
 
 console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);
