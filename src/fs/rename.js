@@ -1,7 +1,7 @@
 import fs from "fs";
 
 const filePath = "./files/wrongFilename.txt";
-const fileNewPath = "./files/properFilename.txt";
+const fileNewPath = "./files/properFilename.md";
 
 export const rename = async () => {
   fs.open(fileNewPath, fs.constants.F_OK, (error) => {
