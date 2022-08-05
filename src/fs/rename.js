@@ -1,3 +1,15 @@
+import fs from "fs";
+
+const filePath = "./files/wrongFilename.txt";
+const fileNewPath = "./files/properFilename.md";
+
 export const rename = async () => {
-    // Write your code here 
+  fs.open(fileNewPath, fs.constants.F_OK, (error) => {
+    if (!error) throw new Error("FS operation failed");
+    fs.rename(filePath, fileNewPath, (error) => {
+      if (error) throw new Error("FS operation failed");
+    });
+  });
 };
+
+rename();
