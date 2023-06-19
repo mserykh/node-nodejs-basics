@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 
 const dirPath = fileURLToPath(import.meta.url);
 const dirName = dirname(dirPath);
-const filePath = join(dirName, "files", "/fileToWrite.txt");
+const filePath = join(dirName, "files", "fileToWrite.txt");
 
 export const write = async () => {
   const rl = readline.createInterface({
