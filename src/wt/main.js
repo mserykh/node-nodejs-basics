@@ -32,7 +32,7 @@ const performCalculations = async () => {
             status: "error",
             data: null,
           };
-          reject(data);
+          resolve(data);
         });
       })
     );
